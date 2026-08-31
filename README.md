@@ -16,22 +16,16 @@ from the Angular/Capacitor medication app in `src/`.
 
 ## Build
 
-From the repository root:
+From this directory:
 
 ```bash
-npm run build:website
+npm install
+npm test
 ```
 
-The deployable output is generated in `dist/website/`.
-
-Run the website-specific validation with:
-
-```bash
-npm run test:website
-```
-
-This rebuilds the site, verifies internal assets and links, checks required page metadata and
-headings, and exercises both pending and configured App Store states.
+The deployable output is generated in `dist/`. The test command rebuilds the site, verifies
+internal assets and links, checks required page and social-sharing metadata, and exercises both
+pending and configured App Store states.
 
 ## Configure before publishing
 
@@ -46,11 +40,16 @@ Store” state instead of a dead or private App Store link.
 
 ## Local preview
 
-Build the site, then run:
+Run:
 
 ```bash
-node website/serve.mjs
+npm run preview
 ```
 
 The preview opens at `http://127.0.0.1:4300`. The published site uses only relative asset paths and
 does not need a framework runtime, server API, cookies, or analytics.
+
+## Publishing
+
+Pushes to `main` are built, validated, and deployed to GitHub Pages by
+`.github/workflows/deploy-pages.yml`.

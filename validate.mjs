@@ -4,7 +4,11 @@ import { fileURLToPath } from 'node:url';
 import { JSDOM } from 'jsdom';
 
 const websiteDirectory = dirname(fileURLToPath(import.meta.url));
-const outputDirectory = resolve(websiteDirectory, '..', 'dist', 'website');
+const outputFlagIndex = process.argv.indexOf('--output');
+const outputDirectory =
+  outputFlagIndex >= 0 && process.argv[outputFlagIndex + 1]
+    ? resolve(process.cwd(), process.argv[outputFlagIndex + 1])
+    : join(websiteDirectory, 'dist');
 const htmlFiles = [
   join(outputDirectory, 'index.html'),
   join(outputDirectory, 'privacy', 'index.html'),
