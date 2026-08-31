@@ -7,8 +7,8 @@ const websiteDirectory = dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = join(websiteDirectory, '..');
 const outputDirectory = join(repositoryRoot, 'dist', 'website');
 const outputAssets = join(outputDirectory, 'assets');
-const logoPath = join(websiteDirectory, 'assets', 'logo.svg');
 const iconPath = join(websiteDirectory, 'assets', 'icon.svg');
+const socialCardPath = join(websiteDirectory, 'assets', 'social-card.png');
 
 await rm(outputDirectory, { recursive: true, force: true });
 await mkdir(outputDirectory, { recursive: true });
@@ -35,31 +35,9 @@ await Promise.all([
   sharp(iconPath).resize(512, 512).png().toFile(join(outputAssets, 'icon-512.png')),
 ]);
 
-const logo = await sharp(logoPath).resize({ width: 430 }).png().toBuffer();
-const icon = await sharp(iconPath).resize({ width: 390 }).png().toBuffer();
-const socialCopy = Buffer.from(`
-  <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
-    <text x="88" y="370" fill="#17211d" font-family="Inter, Arial, sans-serif"
-      font-size="72" font-weight="750" letter-spacing="-2">Know what’s next.</text>
-    <text x="91" y="446" fill="#5f6861" font-family="Inter, Arial, sans-serif"
-      font-size="27">A calm medication reminder for iPhone.</text>
-  </svg>
-`);
-
-await sharp({
-  create: {
-    width: 1200,
-    height: 630,
-    channels: 4,
-    background: '#f5f0e9',
-  },
-})
-  .composite([
-    { input: logo, left: 86, top: 64 },
-    { input: socialCopy, left: 0, top: 0 },
-    { input: icon, left: 760, top: 116, blend: 'over' },
-  ])
-  .png()
-  .toFile(join(outputAssets, 'social-card.png'));
+const socialCard = await sharp(socialCardPath).metadata();
+if (socialCard.width !== 1200 || socialCard.height !== 630 || socialCard.format !== 'png') {
+  throw new Error('The social card must remain a 1200 × 630 PNG.');
+}
 
 console.log(`Cheridose website built at ${outputDirectory}`);
