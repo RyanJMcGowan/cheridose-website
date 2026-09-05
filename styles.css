@@ -1424,6 +1424,7 @@ a {
 
   .hero-copy {
     margin-right: -56px;
+    transform: translateY(-38px);
   }
 
   .hero-product {
@@ -1438,7 +1439,7 @@ a {
   }
 
   .product-section {
-    padding-top: clamp(56px, 5vw, 76px);
+    padding-top: clamp(36px, 3vw, 48px);
   }
 }
 
