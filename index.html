@@ -6,7 +6,7 @@
     <title>Cheridose — Simple Medication Reminders for iPhone</title>
     <meta
       name="description"
-      content="Cheridose is a calm medication reminder and dose tracker for iPhone. See what’s next, understand when it’s due, and record it with one clear action."
+      content="See your next dose at a glance, review what you’ve already taken, and manage your routine through time-zone changes with Cheridose for iPhone."
     />
     <meta name="theme-color" content="#f5f0e9" />
     <meta name="color-scheme" content="light" />
@@ -21,7 +21,7 @@
     <meta property="og:title" content="I made this for my mom. And yours, too. — Cheridose" />
     <meta
       property="og:description"
-      content="A journey through time zones, care, and medicine—and the story that became Cheridose."
+      content="On a family trip to the Azores, crossing time zones made my mom’s medication schedule harder to follow. I couldn’t find what she needed, so I made it."
     />
     <meta property="og:url" content="https://cheridose.com/" />
     <meta property="og:image" content="https://cheridose.com/assets/social-card.png" />
@@ -36,7 +36,7 @@
     <meta name="twitter:title" content="I made this for my mom. And yours, too. — Cheridose" />
     <meta
       name="twitter:description"
-      content="A journey through time zones, care, and medicine—and the story that became Cheridose."
+      content="On a family trip to the Azores, crossing time zones made my mom’s medication schedule harder to follow. I couldn’t find what she needed, so I made it."
     />
     <meta name="twitter:image" content="https://cheridose.com/assets/social-card.png" />
     <meta
@@ -96,14 +96,25 @@
     <main id="main-content">
       <section class="hero section-pad" aria-labelledby="hero-title">
         <div class="hero-glow" aria-hidden="true"></div>
+        <svg
+          class="hero-route"
+          viewBox="0 0 1600 620"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path d="M-80 600C300 575 455 465 710 420c310-55 470-18 635-185 92-93 180-175 335-225" />
+        </svg>
         <div class="site-shell hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">A calm medication reminder for iPhone</p>
+            <p class="eyebrow">Medication timing, clean and clear</p>
             <h1 id="hero-title">Know what’s next.</h1>
             <p class="hero-lede">
-              Cheridose keeps daily medication routines clear—showing the next dose, when it’s due,
-              and one simple action when it’s taken.
+              See your next dose at a glance, review what you’ve already taken, and manage your
+              routine through time-zone changes.
             </p>
+            <a class="hero-story-link" href="#story"
+              >Read why I made it <span aria-hidden="true">→</span></a
+            >
             <div class="hero-actions" id="availability">
               <a
                 class="store-link is-pending"
@@ -209,8 +220,8 @@
       <section class="product-section section-pad" aria-labelledby="product-title">
         <div class="site-shell">
           <div class="section-heading">
-            <p class="eyebrow">Built for the moment that matters</p>
-            <h2 id="product-title">Medication routines,<br />without the clutter.</h2>
+            <p class="eyebrow">Built for real life</p>
+            <h2 id="product-title">Medication routines are rarely routine.</h2>
           </div>
           <div class="feature-grid">
             <article class="feature">
@@ -233,8 +244,8 @@
                   <path class="diagram-chevron" d="m254 42 8 8-8 8" />
                 </svg>
               </div>
-              <h3>One clear next step</h3>
-              <p>See the next Dose Event and how soon it is due at a glance.</p>
+              <h3>What’s next, at a glance</h3>
+              <p>See the next dose and how soon it’s due. Mark it taken with one clear action.</p>
             </article>
             <article class="feature">
               <div class="feature-visual feature-visual-travel" aria-hidden="true">
@@ -248,8 +259,8 @@
                   <path class="diagram-hand" d="M246 50V25M246 50l-13 14" />
                 </svg>
               </div>
-              <h3>Clear across time zones</h3>
-              <p>Keep medication timing understandable when travel carries you away from home.</p>
+              <h3>Time zones, without the math</h3>
+              <p>Keep timing clear as local time changes, without recalculating.</p>
             </article>
             <article class="feature">
               <div class="feature-visual feature-visual-history" aria-hidden="true">
@@ -271,8 +282,10 @@
                   <path class="diagram-history-alert" d="M168 50h10" />
                 </svg>
               </div>
-              <h3>A history you can review</h3>
-              <p>Record taken, skipped, missed, or partial doses and look back when needed.</p>
+              <h3>A clear record, when it matters</h3>
+              <p>
+                Review doses taken, skipped, partial, late, or missed whenever questions come up.
+              </p>
             </article>
           </div>
         </div>
@@ -283,10 +296,23 @@
           <source media="(max-width: 640px)" srcset="assets/terceira-map-portrait.svg" />
           <img src="assets/terceira-map.svg" alt="" width="1600" height="1000" />
         </picture>
+        <svg
+          class="story-route"
+          viewBox="0 0 1600 1100"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M-90 1030C280 945 420 780 665 720c295-72 476-12 675-210 112-111 190-258 350-390"
+          />
+        </svg>
         <div class="site-shell story-grid">
           <div class="story-heading">
-            <p class="eyebrow eyebrow-light">Why Cheridose exists</p>
-            <h2 id="story-title">Made for Cheryl.<br />Made for you.</h2>
+            <p class="eyebrow eyebrow-light">Why I made Cheridose</p>
+            <h2 id="story-title">
+              <span>I made this for my mom.</span>
+              <em>And yours, too.</em>
+            </h2>
           </div>
           <figure class="story-portrait">
             <img
@@ -301,18 +327,16 @@
           <div class="story-copy">
             <p>
               Cheridose began on a family trip to the Azores. My mom, Cheryl, was being treated for
-              cancer, and crossing time zones made an already complicated medication routine harder
-              to track.
+              cancer. Crossing time zones made an already difficult medication routine even harder
+              to follow.
             </p>
             <p>
-              I looked for an app that could handle travel across time zones, tapering schedules,
-              medications being added or removed, and a clear history of doses taken, late, or
-              missed—without making everyday use feel complicated. I couldn’t find one that fit, so
-              I decided to build it for her.
+              I looked for an app that could handle the details real routines involve: time-zone
+              changes, tapering schedules, medications that come and go, and a clear
+              history—including late and missed doses. I couldn’t find it. So I built it for her.
             </p>
             <p class="story-close">
-              Cheridose was made for Cheryl. Now it’s available to anyone who could use the same
-              clarity and care.
+              Her name is Cheryl. I made Cheridose for her. Now it’s here for anyone who needs it.
             </p>
           </div>
         </div>
@@ -328,13 +352,13 @@
       <section class="privacy-section section-pad" aria-labelledby="privacy-title">
         <div class="site-shell privacy-grid">
           <div>
-            <p class="eyebrow">Made for you.</p>
+            <p class="eyebrow">Private by default</p>
             <h2 id="privacy-title">Your routine<br />stays yours.</h2>
           </div>
           <div class="privacy-content">
             <p class="privacy-lede">
-              Core medication schedules and dose history stay on your device, and no Cheridose
-              account is required for everyday use.
+              Your medication schedules and dose history stay on your device. Cheridose works
+              without an account.
             </p>
             <ul class="privacy-list">
               <li>
@@ -354,8 +378,8 @@
               <li>
                 <span aria-hidden="true">✓</span>
                 <div>
-                  <strong>No ads or analytics</strong
-                  ><small>We do not sell your medication information.</small>
+                  <strong>No ads. No analytics.</strong
+                  ><small>Your medication information is never sold.</small>
                 </div>
               </li>
             </ul>
@@ -377,10 +401,10 @@
         />
         <div class="site-shell closing-inner">
           <p class="eyebrow">Cheridose for iPhone</p>
-          <h2 id="closing-title">A simpler way<br />to stay on track.</h2>
+          <h2 id="closing-title">A little more certainty,<br />every day.</h2>
           <p>
-            See your next dose, understand the timing, and record it without digging through menus.
-            Cheridose is coming first to iPhone, with Android in development.
+            See what’s next, understand the timing, and keep a clear record. Cheridose is coming
+            first to iPhone, with Android in development.
           </p>
           <a
             class="store-link is-pending"
