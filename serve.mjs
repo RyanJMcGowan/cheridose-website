@@ -3,7 +3,7 @@ import { stat } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import { extname, join, resolve } from 'node:path';
 
-const root = resolve('dist/website');
+const root = resolve('dist');
 const port = Number(process.env.CHERIDOSE_SITE_PORT || 4300);
 const mimeTypes = {
   '.css': 'text/css; charset=utf-8',

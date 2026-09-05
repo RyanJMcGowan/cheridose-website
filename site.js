@@ -2,6 +2,7 @@ const config = window.CHERIDOSE_SITE_CONFIG ?? {};
 const appStoreUrl = /^https:\/\/apps\.apple\.com\//.test(config.appStoreUrl)
   ? config.appStoreUrl
   : '';
+const interestFormUrl = /^https:\/\//.test(config.interestFormUrl) ? config.interestFormUrl : '';
 const supportEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(config.supportEmail)
   ? config.supportEmail
   : '';
@@ -34,6 +35,31 @@ for (const link of document.querySelectorAll('[data-support-email]')) {
 
   link.href = `mailto:${supportEmail}`;
   link.textContent = supportEmail;
+}
+
+for (const link of document.querySelectorAll('[data-interest-link]')) {
+  const label = link.querySelector('[data-interest-link-label]');
+
+  if (interestFormUrl) {
+    link.href = interestFormUrl;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    continue;
+  }
+
+  if (supportEmail) {
+    const subject = encodeURIComponent('Cheridose early access');
+    const body = encodeURIComponent(
+      'I’m interested in:\n\n[ ] Beta testing Cheridose\n[ ] Being notified when Cheridose reaches the App Store\n\nPlease add this email address to the Cheridose early-access list.',
+    );
+    link.href = `mailto:${supportEmail}?subject=${subject}&body=${body}`;
+    if (label) label.textContent = 'Email us to join';
+    continue;
+  }
+
+  link.setAttribute('aria-disabled', 'true');
+  link.tabIndex = -1;
+  link.addEventListener('click', (event) => event.preventDefault());
 }
 
 for (const year of document.querySelectorAll('[data-current-year]')) {

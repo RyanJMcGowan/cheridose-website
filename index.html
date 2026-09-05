@@ -14,7 +14,7 @@
     <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
     <link rel="icon" href="assets/favicon-32.png" sizes="32x32" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="stylesheet" href="styles.css?v=20260905-editorial" />
+    <link rel="stylesheet" href="styles.css?v=20260905-product-cta" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Cheridose" />
@@ -79,6 +79,7 @@
       >
         <div class="site-shell site-menu-inner">
           <a class="menu-link" href="#story">Our story</a>
+          <a class="menu-link" data-interest-link href="#early-access">Early access</a>
           <a class="menu-link" href="privacy/">Privacy</a>
           <a class="menu-link" href="support/">Support</a>
           <a
@@ -115,7 +116,7 @@
             <a class="hero-story-link" href="#story"
               >Read why I made it <span aria-hidden="true">→</span></a
             >
-            <div class="hero-actions" id="availability">
+            <div class="hero-actions">
               <a
                 class="store-link is-pending"
                 data-app-store-link
@@ -135,9 +136,6 @@
                   <span class="store-name" data-store-name>App Store</span>
                 </span>
               </a>
-              <p class="availability-note">
-                Coming first to iPhone. Android is in development. No account required.
-              </p>
             </div>
           </div>
 
@@ -218,6 +216,15 @@
       </section>
 
       <section class="product-section section-pad" aria-labelledby="product-title">
+        <div class="site-shell product-cta-row" id="availability">
+          <a class="interest-button" data-interest-link href="#early-access">
+            <span data-interest-link-label>Join early access</span>
+            <span class="interest-button-arrow" aria-hidden="true">→</span>
+          </a>
+          <p class="availability-note">
+            Coming first to iPhone. Choose beta testing, launch notification, or both.
+          </p>
+        </div>
         <div class="site-shell">
           <div class="section-heading">
             <p class="eyebrow">Built for real life</p>
@@ -390,7 +397,11 @@
         </div>
       </section>
 
-      <section class="closing-section section-pad" aria-labelledby="closing-title">
+      <section
+        class="closing-section section-pad"
+        id="early-access"
+        aria-labelledby="closing-title"
+      >
         <img
           class="closing-mark"
           src="assets/icon.svg"
@@ -400,31 +411,63 @@
           aria-hidden="true"
         />
         <div class="site-shell closing-inner">
-          <p class="eyebrow">Cheridose for iPhone</p>
-          <h2 id="closing-title">A little more certainty,<br />every day.</h2>
+          <p class="eyebrow">Early access</p>
+          <h2 id="closing-title">Help shape what comes next.</h2>
           <p>
-            See what’s next, understand the timing, and keep a clear record. Cheridose is coming
-            first to iPhone, with Android in development.
+            Join the beta and help us make Cheridose better—or choose one email when it reaches the
+            App Store.
           </p>
-          <a
-            class="store-link is-pending"
-            data-app-store-link
-            href="#availability"
-            aria-disabled="true"
-          >
-            <img
-              class="store-mark"
-              src="assets/icon.svg"
-              alt=""
-              width="100"
-              height="100"
-              aria-hidden="true"
-            />
-            <span>
-              <span class="store-kicker" data-store-kicker>Coming soon to the</span>
-              <span class="store-name" data-store-name>App Store</span>
-            </span>
-          </a>
+          <div class="early-access-options">
+            <div class="early-access-primary">
+              <div class="closing-actions">
+                <a
+                  class="interest-button interest-button-light"
+                  data-interest-link
+                  href="#early-access"
+                >
+                  <span data-interest-link-label>Join the early list</span>
+                  <span class="interest-button-arrow" aria-hidden="true">→</span>
+                </a>
+                <a
+                  class="store-link is-pending"
+                  data-app-store-link
+                  href="#availability"
+                  aria-disabled="true"
+                >
+                  <img
+                    class="store-mark"
+                    src="assets/icon.svg"
+                    alt=""
+                    width="100"
+                    height="100"
+                    aria-hidden="true"
+                  />
+                  <span>
+                    <span class="store-kicker" data-store-kicker>Coming soon to the</span>
+                    <span class="store-name" data-store-name>App Store</span>
+                  </span>
+                </a>
+              </div>
+              <p class="interest-privacy">
+                Choose beta testing, launch notification, or both. No medication information
+                requested. <a href="privacy/">Privacy Policy</a>
+              </p>
+            </div>
+            <a
+              class="interest-qr"
+              data-interest-link
+              href="#early-access"
+              aria-label="Open the Cheridose early-access form"
+            >
+              <span class="interest-qr-frame" aria-hidden="true">
+                <img src="assets/cheridose-early-access-qr.png" alt="" width="200" height="200" />
+              </span>
+              <span class="interest-qr-copy">
+                <strong>Scan with your phone</strong>
+                <span>Open the early-access form</span>
+              </span>
+            </a>
+          </div>
         </div>
       </section>
     </main>

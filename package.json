@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "node build.mjs",
+    "generate:social-covers": "node generate-social-covers.mjs",
     "test": "npm run build && node validate.mjs",
     "preview": "npm run build && node serve.mjs"
   },

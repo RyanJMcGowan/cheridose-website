@@ -87,6 +87,17 @@ for (const htmlFile of htmlFiles) {
 
 const landingHtml = await readFile(join(outputDirectory, 'index.html'), 'utf8');
 const siteScript = await readFile(join(outputDirectory, 'site.js'), 'utf8');
+const deployedSiteConfig = await readFile(join(outputDirectory, 'site-config.js'), 'utf8');
+const configuredInterestFormUrl =
+  'https://forms.zohopublic.com/civicdesigndevelopment1/form/CheridoseEarlyAccess/formperma/8Z4SAXR8tKhVMB8rvyxXRAOUuk6BsR55wfNcwi0deH8';
+check(
+  deployedSiteConfig.includes(configuredInterestFormUrl),
+  'The deployed site configuration must include the public Cheridose early-access form URL',
+);
+check(
+  landingHtml.includes('assets/cheridose-early-access-qr.png'),
+  'The landing page must include the early-access QR code',
+);
 
 function createConfiguredDocument(configuration) {
   const dom = new JSDOM(landingHtml, {
@@ -100,6 +111,7 @@ function createConfiguredDocument(configuration) {
 
 const pendingDom = createConfiguredDocument({
   appStoreUrl: '',
+  interestFormUrl: '',
   supportEmail: 'support@cheridose.com',
   legalName: 'Cheridose',
 });
@@ -107,11 +119,20 @@ for (const link of pendingDom.window.document.querySelectorAll('[data-app-store-
   check(link.getAttribute('aria-disabled') === 'true', 'Pending App Store links must be disabled');
   check(link.tabIndex === -1, 'Pending App Store links must be removed from keyboard navigation');
 }
+for (const link of pendingDom.window.document.querySelectorAll('[data-interest-link]')) {
+  check(
+    link.href.startsWith('mailto:support@cheridose.com?'),
+    'Early-access links must fall back to the configured support email',
+  );
+}
 pendingDom.window.close();
 
 const publicAppStoreUrl = 'https://apps.apple.com/us/app/cheridose/id1234567890';
+const publicInterestFormUrl =
+  'https://forms.zohopublic.com/cheridose/form/earlyaccess/formperma/id';
 const activeDom = createConfiguredDocument({
   appStoreUrl: publicAppStoreUrl,
+  interestFormUrl: publicInterestFormUrl,
   supportEmail: 'help@cheridose.com',
   legalName: 'Cheridose LLC',
 });
@@ -126,6 +147,10 @@ for (const link of activeDom.window.document.querySelectorAll('[data-support-ema
     link.textContent === 'help@cheridose.com',
     'Support link text must use the configured email',
   );
+}
+for (const link of activeDom.window.document.querySelectorAll('[data-interest-link]')) {
+  check(link.href === publicInterestFormUrl, 'Early-access links must use the configured form URL');
+  check(link.target === '_blank', 'Configured early-access forms must open in a new tab');
 }
 for (const name of activeDom.window.document.querySelectorAll('[data-legal-name]')) {
   check(
