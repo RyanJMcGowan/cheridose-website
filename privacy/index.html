@@ -166,23 +166,36 @@
               <p>
                 You can choose to send a feature request, bug report, or support email to
                 <a data-support-email href="mailto:support@cheridose.com">support@cheridose.com</a>.
-                Feedback prepares a message for your email app; Cheridose does not send it
-                automatically. If you send it, we receive your email address, message, and any
-                information you choose to include.
+                When you tap Send in the app, your feedback is securely submitted through Amazon
+                Web Services (AWS) and emailed to our support mailbox. Your email address is
+                optional and is used if you would like a reply. We receive your message and the
+                information you choose to include. Older app versions and the email fallback use
+                your own email app; sending that way also shares your sender email address.
               </p>
               <p>
                 Bug reports also include available app version and build, device and system
                 information, time of the report, originating screen, language, timezone, theme,
                 reminder settings, schedule count, and browser information to help investigate
                 the problem. Medication names, instructions, and dose history are not attached
-                automatically. You can review the prepared message before sending it.
+                automatically. Please do not include sensitive medication or health details in
+                your message unless they are necessary for your support request.
               </p>
               <p>
                 These emails are private, not public. Within Cheridose, access to the support
                 mailbox is restricted to Cheridose employees. We use the information to respond
-                to requests, investigate bugs, and consider feature requests. Sending email uses
-                email providers to transmit and store the message; it is separate from the app's
-                on-device medication storage.
+                to requests, investigate bugs, and consider feature requests. AWS processes the
+                submission and sends the email; Zoho hosts our support mailbox. This is separate
+                from the app's on-device medication storage. We do not keep report contents in a
+                feedback database or server logs. AWS necessarily processes network information
+                such as your IP address to receive the request. To limit abuse and duplicates, we
+                temporarily store submission identifiers, content fingerprints, sending status,
+                counters, and a keyed hash of your IP address—not the raw IP address.
+              </p>
+              <p>
+                These temporary records expire after 48 hours and are automatically removed by
+                AWS, which may take several additional days. Operational logs without report
+                contents are retained for seven days. Aggregate delivery and error metrics help
+                us monitor reliability; we do not enable email-open or click tracking for feedback.
               </p>
 
               <h3>App Store purchases</h3>
