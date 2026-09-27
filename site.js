@@ -26,7 +26,9 @@ for (const link of document.querySelectorAll('[data-app-store-link]')) {
     }
   } else {
     link.tabIndex = -1;
-    link.addEventListener('click', (event) => event.preventDefault());
+    link.addEventListener('click', (event) => {
+      if (link.getAttribute('aria-disabled') === 'true') event.preventDefault();
+    });
   }
 }
 
@@ -59,7 +61,9 @@ for (const link of document.querySelectorAll('[data-interest-link]')) {
 
   link.setAttribute('aria-disabled', 'true');
   link.tabIndex = -1;
-  link.addEventListener('click', (event) => event.preventDefault());
+  link.addEventListener('click', (event) => {
+      if (link.getAttribute('aria-disabled') === 'true') event.preventDefault();
+    });
 }
 
 for (const year of document.querySelectorAll('[data-current-year]')) {

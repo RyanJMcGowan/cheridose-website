@@ -9,7 +9,7 @@
   "scripts": {
     "build": "node build.mjs",
     "generate:social-covers": "node generate-social-covers.mjs",
-    "test": "npm run build && node validate.mjs",
+    "test": "npm run build && node validate.mjs && node --test tracking.test.mjs",
     "preview": "npm run build && node serve.mjs"
   },
   "dependencies": {

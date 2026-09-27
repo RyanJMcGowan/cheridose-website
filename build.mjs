@@ -25,6 +25,7 @@ await Promise.all(
     'robots.txt',
     'site-config.js',
     'site.js',
+    'tracking.js',
     'sitemap.xml',
     'styles.css',
     'support',
